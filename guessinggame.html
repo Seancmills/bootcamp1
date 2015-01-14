@@ -1,13 +1,26 @@
 <script>
-var guess,
-	answer;
-guess = prompt("How many states have I been to? ");
 
-answer = (6)
-if (guess == answer) {
-	alert("Your answer is correct!");
-}
-else{
-	alert("Refresh to try again.");
+alert("This is a guessing game! Try and figure our how many states I have been to!");
+
+var guess = 0;
+	  answer = 6;
+
+var play = function() {
+
+	guess = prompt("Your first guess! Enter a number between 1 and 50");
+	 if (guess == answer) {
+		alert("Good job you win! Refresh to play again and win faster!");
+    return;
+	 } else if (guess > answer) {
+     alert("Too high! Guess again!");
+   } else if (guess < answer) { 
+    alert("Too low! guess again!");
+   } else if (isNaN(guess)) {
+    alert("You must eneter a number!");
+   }
 };
-</script>
+
+while (guess != 6) {
+  play();
+}
+	</script>
